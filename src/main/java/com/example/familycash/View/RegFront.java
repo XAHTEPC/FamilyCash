@@ -81,6 +81,7 @@ public class RegFront {
                 try {
                     String pass = Crypto.hash(passwordField.getText());
                     SQLite.addUser(input_login.getText(), pass);
+                    Front.id = SQLite.getID(input_login.getText(),pass);
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }

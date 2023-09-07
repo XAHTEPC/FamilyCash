@@ -77,7 +77,7 @@ public class Time {
         root_add.getChildren().add(save);
         Text error = new Text("Проверьте данные");
         error.setLayoutY(53);
-        error.setLayoutX(180);
+        error.setLayoutX(100);
 
         save.setOnAction(t1 ->{
             root_add.getChildren().remove(error);
@@ -119,6 +119,8 @@ public class Time {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         boolean fl = true;
         char[] mas = date.toCharArray();
+        if(date.length()!=10)
+            return false;
         fl = mas[0]>='0'&&mas[0]<='9'&&mas[1]>='0'&&mas[1]<='9'&&mas[2]=='-'&&
                 mas[3]>='0'&&mas[3]<='9'&&mas[4]>='0'&&mas[4]<='9'&&mas[5]=='-'&&
                 mas[6]=='2'&&mas[7]=='0'&&mas[8]>='0'&&mas[8]<='9'&&mas[9]>='0'&&mas[9]<='9';
